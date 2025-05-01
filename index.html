@@ -4,30 +4,402 @@
   <meta charset="UTF-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-  <link rel="icon" type="image/png" href="assets/favicon.png" />
+  <title>Amogha Mayya</title>
+  <link rel="icon" type="image/png" href="/assets/my-video-gif.gif" />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="mediaqueries.css" />
+  <link href='https://fonts.googleapis.com/css?family=Quicksand:400' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type='text/css' href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">      
+  <style>
+    /* New Skills Section Styles */
+    .skills-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .skill-category {
+      width: 100%;
+      margin-bottom: 2rem;
+    }
+
+    .experience-sub-title {
+      font-size: 1.8rem;
+      margin-bottom: 2rem;
+      text-align: center;
+      position: relative;
+    }
+
+    .experience-sub-title::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 50px;
+      height: 3px;
+      background: linear-gradient(90deg, #4d5bce, #3a95e4);
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+      gap: 3rem;
+      justify-items: center;
+      padding: 2rem 0;
+    }
+
+    .skill-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      transition: transform 0.3s ease;
+      filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.2));
+    }
+
+    .skill-item:hover {
+      transform: translateY(-10px);
+    }
+
+    .skill-logo {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 1rem;
+      filter: drop-shadow(0 0 12px rgba(252, 252, 252, 0.2));
+      transition: all 0.3s ease;
+    }
+
+    .skill-item:hover .skill-logo {
+      filter: drop-shadow(0 0 12px rgba(255, 255, 255, 0.5));
+    }
+
+    .skill-name {
+      font-weight: 500;
+      margin-bottom: 0.3rem;
+      color: #ffffff;
+    }
+
+    .skill-level {
+      font-size: 0.8rem;
+      color: #ffffff;
+    }
+
+    /* Animation for floating effect */
+    @keyframes float {
+      0% {
+        transform: translateY(0px);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+      100% {
+        transform: translateY(0px);
+      }
+    }
+
+    .skill-item:nth-child(odd) .skill-logo {
+      animation: float 3s ease-in-out infinite;
+    }
+
+    .skill-item:nth-child(even) .skill-logo {
+      animation: float 3.5s ease-in-out infinite;
+      animation-delay: 0.5s;
+    }
+
+    /* New About Section Styles */
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .about-card {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05));
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      margin-bottom: 3rem;
+      transform: translateY(0);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-card:hover {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #e0e0e0;
+      margin-bottom: 1.5rem;
+    }
+
+    .highlight {
+      background: linear-gradient(120deg, rgba(77, 91, 206, 0.2), rgba(58, 149, 228, 0.2));
+      padding: 0.2em 0.4em;
+      border-radius: 4px;
+      font-weight: 600;
+      color: #ffffff;
+    }
+
+    .company-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 2px;
+}
+
+.company-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+}
+
+.company-link:hover::after {
+  animation: underline-slide 0.3s ease forwards;
+}
+
+@keyframes underline-slide {
+  0% {
+    width: 0;
+    left: 0;
+  }
+  100% {
+    width: 100%;
+    left: 0;
+  }
+}
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+      justify-content: center;
+    }
+
+    .tag {
+      background: linear-gradient(90deg, #4d5bce, #3a95e4);
+      padding: 0.5rem 1rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: white;
+      box-shadow: 0 4px 10px rgba(58, 149, 228, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .tag:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 12px rgba(58, 149, 228, 0.4);
+    }
+
+    .social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.social-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.08));
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  color: white;
+  font-size: 1.6rem;
+}
+
+.social-btn:hover {
+  transform: translateY(-5px);
+  filter: brightness(1.2);
+  text-decoration: none;
+}
+
+
+#projects {
+  padding: 4rem 2rem;
+  background-color: #000000;
+  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.title-projects {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+}
+
+.project-item {
+  background: transparent;
+}
+
+.project-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.project-link {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #ffffff;
+  text-decoration: none;
+  position: relative;
+  padding-bottom: 4px;
+  transition: color 0.3s ease;
+}
+
+.project-link:hover {
+  color: #00bfff;
+}
+
+.project-link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #ffffff;
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+.project-link:hover::after {
+  animation: underline-animate 0.4s ease forwards;
+}
+
+@keyframes underline-animate {
+  0% {
+    transform: scaleX(0);
+    transform-origin: left;
+  }
+  100% {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+.project-icons a {
+  text-decoration: none;
+  font-size: 1.4rem;
+  color: #ffffff;
+  margin-left: 0.5rem;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.project-icons a:hover {
+  color: #00bfff;
+  transform: scale(1.2);
+}
+
+.project-description {
+  margin-top: 6px;
+  font-size: 0.95rem;
+  color: #bbbbbb;
+  line-height: 1.5;
+}
+/* gradient for gif*/
+.aura-effect {
+  padding-top: 35px;
+  width: 320px;
+  height: 320px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.aura-effect::before {
+  content: "";
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(ellipse at center, rgb(255, 255, 255), transparent 45%);
+  filter: blur(60px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+.aura-effect img {
+  position: relative;
+  z-index: 1;
+  border-radius: 40px;
+}
+
+.site-footer {
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+  font-size: 1.3rem;
+  font-family:poppings;
+  letter-spacing: 0.4px;
+  margin-top: 4rem;
+  margin-bottom: 2rem;
+}
+
+
+  </style>
 </head>
 
 <body>
+
+
   <div class="preloader" id="preloader"></div>
 
   <div class="content" id="content">
-    <nav id="desktop-nav">
-      <div class="logo">Baivab Sarkar</div>
+    <nav id="desktop-nav" >
+      <div class="logo"></div>
       <div>
-        <ul class="nav-links">
+        <ul class="nav-links" style="margin-right: 340px;">
           <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
+          <li><a href="#experience">Skills</a></li>
           <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <!-- <li><a href="https://www.linkedin.com/feed/">Contact</a></li> -->
         </ul>
       </div>
     </nav>
 
     <nav id="hamburger-nav">
-      <div class="logo">Baivab Sarkar</div>
+      <!-- <div class="logo">Amogha Mayya</div> -->
       <div class="hamburger-menu">
         <div class="hamburger-icon" onclick="toggleMenu()">
           <span></span>
@@ -37,237 +409,287 @@
 
         <div class="menu-links">
           <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
+          <li><a href="#experience" onclick="toggleMenu()">Skills</a></li>
           <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+          <!-- <li><a href="https://www.linkedin.com/feed/" onclick="toggleMenu()">Contact</a></li> -->
         </div>
       </div>
     </nav>
 
     <section id="profile">
-      <div class="section__pic-container">
-        <img src="./assets/profile.png" alt="John Doe profile picture" />
+      <div class="section__pic-container aura-effect">
+        <img src="/assets/my-video-gif.gif" height="300px" width="300px" alt="Amogha Mayya Profile Pic" />
       </div>
+      
+      
 
       <div class="section__text">
-        <p class="section__text__p1">Hello, I'm</p>
-        <h1 class="title">Baivab Sarkar</h1>
-        <p class="section__text__p2">Frontend Developer</p>
-        <div class="btn-container">
-          <button class="btn btn-color-2" onclick="window.open('./assets/CV-BAIVAB SARKAR.pdf', '_blank')">Download CV</button>
-          <button class="btn btn-color-1" onclick="location.href='./#contact'">Contact Info</button>
+        <p class="title3">Hello, I'm</p>
+        <h2 class="title2">Amogha Mayya</h2>
+        <p class="title3" >Data Analyst </p>
+        <div class="social-links">
+          <a href="https://www.linkedin.com/in/amogha-mayya/" class="social-btn">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/Amogha-Mayya" class="social-btn">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="mailto:amoghaks2562001@gmail.com" class="social-btn">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+          </a>
+        </div>
         </div>
 
-        <div id="socials-container">
-          <img src="./assets/linkedin.png" alt="My LinkedIn profile" class="icon" onclick="window.open('https://www.linkedin.com/in/baivabsarkar', '_blank')" />
-          <img src="./assets/github.png" alt="My Github profile" class="icon" onclick="window.open('https://github.com/ThisIs-Developer', '_blank')" />
-        </div>
-      </div>
     </section>
-
+<div style="margin-top: 4px;"></div>
     <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1>
+      <h2 class="title">About Me</h2>
 
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img src="./assets/profile2.png" alt="Profile picture" class="about-pic" />
-        </div>
-
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img src="./assets/experience.png" alt="Experience icon" class="icon" />
-              <h3>Experience</h3>
-              <p>Web Development - Training<br />Ardent Computech Pvt. Ltd.</p>
-            </div>
-            <div class="details-container">
-              <img src="./assets/education.png" alt="Education icon" class="icon" />
-              <h3>Education</h3>
-              <p>10+2 Major in Pure Science<br />B.Tech on Computer Science</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              Enthusiastic and dedicated Computer Science student at JIS College of Engineering, West Bengal, with a strong foundation in technologies such as HTML, CSS, JavaScript, MySQL, and C. Proven team player with experience in leadership roles, adept at collaborating effectively to achieve project goals. Passionate about learning and applying innovative solutions to real-world challenges in the field of technology.
-            </p>
-          </div>
-        </div>
-      </div>
-
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#experience'" />
-    </section>
-
-    <section id="experience">
-      <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
-
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container">
-            <h2 class="experience-sub-title">Frontend Development</h2>
-            <div class="article-container">
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>HTML</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>CSS</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Bootstrap</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>JavaScript</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-            </div>
-          </div>
+      <div class="about-content">
+        <div class="about-card">
+          <p class="about-text">
+            Hello there! I'm a at <a href="https://riskonnect.com/" class="company-link" style="text-decoration: none;">Riskonnect Inc.</a> where I transform complex datasets into clear, actionable insights. With over a year of experience, I've developed a passion for making data not just meaningful—but genuinely exciting.
+          </p>
           
-          <div class="details-container">
-            <h2 class="experience-sub-title">Development Techniques</h2>
-            <div class="article-container">
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>MySQL</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Java</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>C</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>NodeJS</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div>
-                  <h3>Git</h3>
-                  <p>Experienced</p>
-                </div>
-              </article>
-              <article>
-                <img src="./assets/checkmark.png" alt="Experience icon" class="icon" />
-                <div id="docker">
-                  <h3>Docker</h3>
-                  <p>Intermediate</p>
-                </div>
-              </article>
+          <p class="about-text">
+            My toolkit includes crafting efficient SQL queries, building powerful Python data pipelines, and designing intuitive visualizations that help teams make better decisions. I thrive on finding patterns where others see chaos and turning numbers into narratives.
+          </p>
+
+          <p class="about-text">
+            When I'm not immersed in datasets, you'll find me plotting my next <a href="https://www.chess.com/member/amoghamaiya" class="company-link" style="text-decoration: none;">chess</a> strategy or working on my <a href="https://monkeytype.com/profile/amogha_maiya" class="company-link" style="text-decoration: none;">typing speed</a> . I'm constantly chasing that perfect "aha!" moment when complex data suddenly reveals its secrets.
+          </p>
+
+        </div>
+      </div>
+    </section>
+    <section id="experience">
+      <!-- <p class="section__text__p1">Explore My</p> -->
+      <h2 class="title" style="padding-bottom: 40px;">Skills</h2>
+
+      <div class="skills-container">
+        <!-- Tech Skills Category -->
+        <div class="skill-category">
+          <!-- <h2 class="experience-sub-title">Tech</h2> -->
+          <div class="skills-grid">
+            <!-- SQL Skill -->
+            <div class="skill-item">
+              <!-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sql/sql-original.svg" alt="SQL" class="skill-logo"> -->
+               
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/azuresqldatabase/azuresqldatabase-original.svg" class="skill-logo"/>
+          
+              <div class="skill-name">SQL</div>
+              <!-- <div class="skill-level">Experienced</div> -->
+            </div>
+            
+            <!-- Python Skill -->
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" class="skill-logo">
+              <div class="skill-name">Python</div>
+              <!-- <div class="skill-level">Experienced</div> -->
+            </div>
+            
+            <!-- NumPy Skill -->
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" alt="NumPy" class="skill-logo">
+              <div class="skill-name">NumPy</div>
+              <!-- <div class="skill-level">Intermediate</div> -->
+            </div>
+            
+            <!-- Excel Skill -->
+            <div class="skill-item">
+              <!-- <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel" class="skill-logo"> -->
+               
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/pandas/pandas-original.svg" class="skill-logo"/>
+          
+              <div class="skill-name">Pandas</div>
+              <!-- <div class="skill-level">Intermediate</div> -->
+            </div>
+            
+          <div class="skill-item">
+            <!-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="Postgres" class="skill-logo"> -->
+            
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/matplotlib/matplotlib-original.svg" class="skill-logo"/>
+          
+            <div class="skill-name">Matplotlib</div>
+            <!-- <div class="skill-level">Intermediate</div> -->
+          </div>
+          <div class="skill-item">
+            <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="Postgres" class="skill-logo">
+            <div class="skill-name">Postgres</div>
+            <!-- <div class="skill-level">Intermediate</div> -->
+          </div>
+        </div>
+        </div>
+
+        <!-- Tools Category -->
+        <div class="skill-category">
+          <!-- <h2 class="experience-sub-title">Tools</h2> -->
+          <div class="skills-grid" >
+            <!-- Postgres Skill -->
+            <div class="skill-item">
+            </div>
+            <div class="skill-item">
+              <!-- <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="Postgres" class="skill-logo"> -->
+              
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/sqldeveloper/sqldeveloper-original.svg" class="skill-logo"/>
+              <div class="skill-name">Sql developer</div>
+              <!-- <div class="skill-level">Intermediate</div> -->
+            </div>
+            
+            <!-- Excel Tool -->
+            <div class="skill-item">
+              <img src="https://cdn-icons-png.flaticon.com/512/732/732220.png" alt="Excel" class="skill-logo">
+              <div class="skill-name">Excel</div>
+              <!-- <div class="skill-level">Experienced</div> -->
+            </div>
+            
+            <!-- Git Tool -->
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git" class="skill-logo">
+              <div class="skill-name">Git</div>
+              <!-- <div class="skill-level">Experienced</div> -->
+            </div>
+            
+            <!-- VS Code Tool -->
+            <div class="skill-item">
+              <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" alt="VS Code" class="skill-logo">
+              <div class="skill-name">VS Code</div>
+              <!-- <div class="skill-level">Intermediate</div> -->
+            </div>
+            
+            <!-- ETL Tool -->
+            <div class="skill-item">
             </div>
           </div>
         </div>
       </div>
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#projects'" />
     </section>
     
     <section id="projects">
-      <p class="section__text__p1">Browse My Recent</p>
-      <h1 class="title">Projects</h1>
-      <div class="experience-details-container">
-        <div class="about-containers">
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/project-11.jpg" alt="Project 3" class="project-img" />
+      <h2 class="title-projects" style="padding-bottom: 40px;">Projects</h2>
+      <div class="project-grid">
+        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-gray-700">
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <h3 class="text-2xl font-bold text-white flex items-center" style="padding-bottom: 5px;">
+                <p style="padding-bottom: 10px;font-size: x-large;">Cleansheet.io</p>
+                <!-- Web Icon -->
+                <a href="https://cleansheetio.vercel.app/" target="_blank" class="ml-3 text-gray-300 hover:text-blue-400 transition-colors" style="padding-right: 10px;">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="font-size: larger;">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                </a>
+                <!-- GitHub Icon -->
+                <a href="https://github.com/Amogha-Mayya/cleansheet.io" target="_blank" class="ml-2 text-gray-300 hover:text-purple-400 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </h3>
             </div>
-            <h2 class="experience-sub-title project-title">SketchFlow</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/ThisIs-Developer/SketchFlow ', '_blank')">Github</button>
-              <button class="btn btn-color-2 project-btn" onclick="window.open('https://sketchflow.pages.dev', '_blank')">Live Demo</button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/project-1.jpg" alt="Project 1" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">Markdown Viewer</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/ThisIs-Developer/Markdown-Viewer', '_blank')">Github</button>
-              <button class="btn btn-color-2 project-btn" onclick="window.open('https://markdownviewer.pages.dev', '_blank')">Live Demo</button>
-            </div>
-          </div>
-          <div class="details-container color-container">
-            <div class="article-container">
-              <img src="./assets/project-2.jpg" alt="Project 2" class="project-img" />
-            </div>
-            <h2 class="experience-sub-title project-title">Llama2 CSV Chatbot</h2>
-            <div class="btn-container">
-              <button class="btn btn-color-2 project-btn" onclick="window.open('https://github.com/ThisIs-Developer/Llama-2-GGML-CSV-Chatbot', '_blank')">Github</button>
-              <button class="btn btn-color-2 project-btn" onclick="window.open('https://huggingface.co/spaces/ThisIs-Developer/Llama-2-GGML-CSV-Chatbot', '_blank')">Live Demo</button>
-            </div>
+           
           </div>
         </div>
-        <div class="btn-container">
-          <button class="btn btn-color-2" onclick="window.location.href='project.html'">More Work</button>
-        </div>
-      </div>
-      <img src="./assets/arrow.png" alt="Arrow icon" class="icon arrow" onclick="location.href='./#contact'" />
-    </section>
-    
-    <section id="contact">
-      <p class="section__text__p1">Get in Touch</p>
-      <h1 class="title">Contact Me</h1>
-      <div class="contact-info-upper-container">
-        <div class="contact-info-container">
-          <img src="./assets/email.png" alt="Email icon" class="icon contact-icon email-icon" />
-          <p>
-            <a href="mailto:baivabsarkar@gmail.com">baivabsarkar@gmail.com</a>
-          </p>
-        </div>
-        <div class="contact-info-container">
-          <img src="./assets/linkedin.png" alt="LinkedIn icon" class="icon contact-icon" />
-          <p>
-            <a href="https://www.linkedin.com/in/baivabsarkar">LinkedIn</a>
-          </p>
-        </div>
-      </div>
-    </section>
-    
-    <footer>
-      <nav>
-        <div class="nav-links-container">
-          <ul class="nav-links">
-            <li><a href="#about">About</a></li>
-            <li><a href="#experience">Experience</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </nav>
-      <p>Copyright &#169; 2024 Baivab Sarkar. All Rights Reserved.</p>
-    </footer>
-    
-  </div>
   
+        <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-gray-700">
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <h3 class="text-2xl font-bold text-white flex items-center" style="padding-bottom: 5px;">
+                <p style="padding-bottom: 10px;font-size: x-large;">Walmart Data Analysis</p>
+                <!-- Web Icon -->
+              
+                <!-- GitHub Icon -->
+                <a href="https://github.com/Amogha-Mayya/walmart-data-analysis" target="_blank" class="ml-2 text-gray-300 hover:text-purple-400 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </h3>
+            </div>
+           
+          </div>
+        </div><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-gray-700">
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <h3 class="text-2xl font-bold text-white flex items-center" style="padding-bottom: 5px;">
+                <p style="padding-bottom: 10px;font-size: x-large;">Famous Paintings Analysis</p>
+                <!-- Web Icon -->
+                
+                <!-- GitHub Icon -->
+                <a href="https://github.com/Amogha-Mayya/famous-paintings-analysis" target="_blank" class="ml-2 text-gray-300 hover:text-purple-400 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </h3>
+            </div>
+           
+          </div>
+        </div><div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-gray-700">
+          <div class="p-6">
+            <div class="flex items-center mb-4">
+              <h3 class="text-2xl font-bold text-white flex items-center" style="padding-bottom: 5px;">
+                <p style="padding-bottom: 10px;font-size: x-large;">Covid-19 Data Analysis</p>
+                <!-- Web Icon -->
+                <!-- <a href="https://cleansheet.io" target="_blank" class="ml-3 text-gray-300 hover:text-blue-400 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="font-size: larger;">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="2" y1="12" x2="22" y2="12"></line>
+                    <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                  </svg>
+                </a> -->
+                <!-- GitHub Icon -->
+                <a href="https://github.com/Amogha-Mayya/covid-data-analysis" target="_blank" class="ml-2 text-gray-300 hover:text-purple-400 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                  </svg>
+                </a>
+              </h3>
+            </div>
+           
+          </div>
+        </div>
+      </div>
+      <div class="bg-gray-800 rounded-xl overflow-hidden shadow-lg transform transition-all duration-300 hover:scale-105 hover:shadow-2xl border border-gray-700" style="padding-top: 60px;">
+        <div class="p-6">
+          <div class="flex items-center mb-4">
+            <h3 class="text-2xl font-bold text-white flex items-center" style="padding-bottom: 5px;">
+              <p style="padding-top: 10px;font-size: x-large;">Performance Evolution of ML Algorithms</p>
+              <!-- Web Icon -->
+               <div style="margin-top: 15px;"></div>
+              <a href="https://ieeexplore.ieee.org/document/10212387" target="_blank" class="ml-3 text-gray-300 hover:text-blue-400 transition-colors" style="padding-right: 10px;margin-top: 20px;">
+                <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="font-size: larger;">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <line x1="2" y1="12" x2="22" y2="12"></line>
+                  <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+                </svg>
+              </a>
+            </h3>
+          </div>
+         
+        </div>
+      </div>
+    </section>
+    <footer>
+      <div class="wave">
+          <!-- <div class="wave" id="wave1"></div> -->
+          <!-- <div class="wave" id="wave2"></div> -->
+          <div class="wave" id="wave3"></div>
+          <!-- <div class="wave" id="wave4"></div> -->
+      </div>
+      <footer class="site-footer">
+        <p>Made with <b>❤️</b> by <a href="https://www.linkedin.com/" style="text-decoration: none;"><b>Amogha Mayya</b></a></p>
+        <img></img>
+      </footer>
+      
+  </footer>
+    
+    
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>    
   <script src="script.js"></script>
   </body>
 </html>

@@ -1,4 +1,5 @@
-const messages = ["Hello", "Bonjour", "स्वागत हे", "Ciao", "Olá", "おい", "Hallå", "Guten tag", "Hallo"];
+const messages = ["Hello", "स्वागत हे" , "ಸ್ವಾಗತ"];
+// const messages = ["Hello", "Bonjour", "स्वागत हे", "Ciao", "Olá", "おい", "Hallå", "Guten tag", "Hallo"];
 const preloader = document.getElementById('preloader');
 const content = document.getElementById('content');
 
@@ -17,9 +18,9 @@ function showNextMessage() {
         preloader.innerHTML = '';
         preloader.appendChild(messageElement);
 
-        let displayTime = 150;
+        let displayTime = 1000;
         if (currentMessage === 0) {
-            displayTime = 800;
+            displayTime = 900;
         }
 
         currentMessage++;
@@ -30,7 +31,7 @@ function showNextMessage() {
         content.style.borderBottomRightRadius = '0';
         
         setTimeout(() => {
-            preloader.classList.add('slide-out');
+            preloader.classList.add('');
             setTimeout(() => {
                 preloader.style.display = 'none';
             }, 400);
@@ -38,7 +39,7 @@ function showNextMessage() {
     }
 }
 
-window.onload = () => setTimeout(showNextMessage, 700);
+window.onload = () => setTimeout(showNextMessage, 1000);
 
 function toggleMenu() {
     const menu = document.querySelector(".menu-links");

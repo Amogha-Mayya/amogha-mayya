@@ -18,7 +18,7 @@ function showNextMessage() {
         preloader.innerHTML = '';
         preloader.appendChild(messageElement);
 
-        let displayTime = 1000;
+        let displayTime = 900;
         if (currentMessage === 0) {
             displayTime = 900;
         }
@@ -39,7 +39,7 @@ function showNextMessage() {
     }
 }
 
-window.onload = () => setTimeout(showNextMessage, 1000);
+window.onload = () => setTimeout(showNextMessage, 700);
 
 function toggleMenu() {
     const menu = document.querySelector(".menu-links");

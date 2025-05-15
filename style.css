@@ -593,4 +593,9 @@ a.no-hover:hover {
     align-items: center;
     align-self: center;
     align-content: center;
+    margin-right: 15px;
+}
+.footer{
+  margin-bottom : 0.75 rem;
+
 }

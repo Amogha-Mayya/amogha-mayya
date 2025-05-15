@@ -128,12 +128,12 @@ a {
   text-decoration-color: #000;
 }
 
-a:hover {
+/* a:hover {
   color: #ffffff;
   text-decoration: underline;
   text-underline-offset: 1rem;
   text-decoration-color: linear-gradient(90deg, #ffffff, #000000);
-}
+} */
 
 
 .logo {
@@ -294,6 +294,20 @@ section {
   padding-bottom: 0.3rem;
 }
 .title3 {
+  font-size: 1.6rem;
+  text-align: center;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: linear-gradient(90deg, #ffffff, #ffffff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  margin-bottom: 0.2rem;
+  position: relative;
+  font-family: Poppins, sans-serif;
+  padding-bottom: 0.2rem;
+}
+.title4 {
   font-size: 1.6rem;
   text-align: center;
   font-weight: 600;
@@ -558,16 +572,25 @@ a.no-hover:hover {
   text-decoration: none;
   pointer-events: none; /* Optional: disable hover interactions */
 }
+#profile{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 14px;
+  margin-top: 2rem;
+}
+.title3{
+  margin-top: 7rem;
+}
+.section__pic-container {
+  margin:  0 auto;
+}
+.social-links{
+  margin-bottom: 2rem;
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
+.github-icon{
+    align-items: center;
+    align-self: center;
+    align-content: center;
+}

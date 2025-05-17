@@ -1,6 +1,6 @@
 <header align="left">
   
-![Your paragraph text (5)](https://github.com/user-attachments/assets/8f10f3b4-b981-41a9-8bde-47ebf6a02fd9)
+![](![Header](https://github.com/Amogha-Mayya/amogha-mayya/blob/main/assets/header.png)
 
 
 

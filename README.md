@@ -31,10 +31,9 @@
 <br>
 
 ### About me ☕
-- Data Analyst at Riskonnect.
-- Passionate about data and open-source.
-- I clean data for a living and break it down for fun.
-- Hobbies: chess, reading books, and listening to music.
+- Data Analyst at [Riskonnect](https://riskonnect.com/)
+- I tackle data at work and algorithms on [LeetCode](https://leetcode.com/u/AmoghaMayya/)
+- Fancy a game of [chess](https://www.chess.com/member/amoghamaiya)
 </section>
 
 <br>

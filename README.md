@@ -1,7 +1,6 @@
 <header align="left">
-  
-![](![Header](https://github.com/Amogha-Mayya/amogha-mayya/blob/main/assets/header.png)
 
+<img src="https://github.com/Amogha-Mayya/amogha-mayya/blob/main/assets/header.png">
 
 
 <table align="left">
@@ -13,19 +12,14 @@
     <th>
    <img align="center" width="24" height="24" src="https://img.icons8.com/fluency/48/linkedin.png" alt="linkedin"/>   
   <a href="https://www.linkedin.com/in/amogha-mayya/" />   LinkedIn
-    </th> 
-        <th>
-  <a href="https://dev.to/jfmartinz" /> 
-  <img align="center" width="24" height="24" src="https://img.icons8.com/color/48/dev-community.png" alt="dev-community"/>  
-  Dev.to blog
-    </th> 
+    </th>
      <th>
        <img align="center" width="24" height="24" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo.png" alt="external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo"/>
         <a href="https://leetcode.com/u/AmoghaMayya/">LeetCode</a>
     </th>
      <th>
-       <img width="24" height="24" align="center" src="https://img.icons8.com/ios-glyphs/30/FFFFFF/twitterx--v1.png" alt="twitterx--v1"/>
-      <a href="" />   𝕏 (Twitter)
+       <img align="center" width="24" height="24" src="https://img.icons8.com/fluency/48/mail--v1.png" alt="mail"/>
+      <a href="mailto:amoghaks2562001@gmail.com" />Mail
     </th> 
   </tr>
   
@@ -37,10 +31,10 @@
 <br>
 
 ### About me ☕
-- Data Analyst at [Riskonnect]().
-- Loves to contribute to Open-Source. [GSSOC]()
-- Occasionally write blogs. Read my first [blog]()
-- Hobbies: chess, reading books, and listening to music
+- Data Analyst at Riskonnect.
+- Passionate about data and open-source.
+- I clean data for a living and break it down for fun.
+- Hobbies: chess, reading books, and listening to music.
 </section>
 
 <br>

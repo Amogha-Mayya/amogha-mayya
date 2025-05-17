@@ -7,19 +7,19 @@
   <tr >
     <th>
       <img align="center" width="24" height="24" src="https://img.icons8.com/material-outlined/24/EBEBEB/globe--v1.png" alt="globe--v1"/>
-      <a href="https://amogha-mayya.vercel.app/" />  My Portfolio  
+      <a href="https://amogha-mayya.vercel.app/" target="_blank"/>  My Portfolio  
     </th> 
     <th>
    <img align="center" width="24" height="24" src="https://img.icons8.com/fluency/48/linkedin.png" alt="linkedin"/>   
-  <a href="https://www.linkedin.com/in/amogha-mayya/" />   LinkedIn
+  <a href="https://www.linkedin.com/in/amogha-mayya/" target="_blank"/>   LinkedIn
     </th>
      <th>
        <img align="center" width="24" height="24" src="https://img.icons8.com/external-tal-revivo-color-tal-revivo/24/external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo.png" alt="external-level-up-your-coding-skills-and-quickly-land-a-job-logo-color-tal-revivo"/>
-        <a href="https://leetcode.com/u/AmoghaMayya/">LeetCode</a>
+        <a href="https://leetcode.com/u/AmoghaMayya/" target="_blank">LeetCode</a>
     </th>
      <th>
        <img align="center" width="24" height="24" src="https://img.icons8.com/fluency/48/mail--v1.png" alt="mail"/>
-      <a href="mailto:amoghaks2562001@gmail.com" />Mail
+      <a href="mailto:amoghaks2562001@gmail.com" target="_blank"/>Mail
     </th> 
   </tr>
   

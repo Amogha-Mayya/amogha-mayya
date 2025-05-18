@@ -561,11 +561,20 @@ article .icon {
   .section-title {
     font-size: 2rem;
   }
-  
-  .section-spacing {
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-  }
+  .about-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 0.8rem;
+      line-height: 1.8;
+      color: #e0e0e0;
+      margin-bottom: 1.5rem;
+    }
+    .about-card {
+      border-radius: 2px;
+      padding: 0.1rem;
+      margin-bottom: 3rem;
+    }
+    .project-link {
+      padding-right:10px;
 }
 a.no-hover:hover {
   color: inherit;

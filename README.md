@@ -38,25 +38,22 @@
 ### Tech stack:
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black) ![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white) ![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white) ![GitLab](https://img.shields.io/badge/gitlab-%23181717.svg?style=for-the-badge&logo=gitlab&logoColor=white) ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white) ![TeamCity](https://img.shields.io/badge/teamcity-000000.svg?style=for-the-badge&logo=teamcity&logoColor=white) ![MicrosoftSQLServer](https://img.shields.io/badge/Microsoft%20SQL%20Server-CC2927?style=for-the-badge&logo=microsoft%20sql%20server&logoColor=white) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white) ![Google Cloud](https://img.shields.io/badge/GoogleCloud-%234285F4.svg?style=for-the-badge&logo=google-cloud&logoColor=white) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white) ![Bash Script](https://img.shields.io/badge/bash_script-%23121011.svg?style=for-the-badge&logo=gnu-bash&logoColor=white)
 
+<section>
+
+  <!-- First row: two images side by side -->
+<div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center;">
+<img src="https://github-readme-stats.vercel.app/api?username=Amogha-Mayya&theme=tokyonight&show_icons=true&hide_border=true&count_private=true" alt="GitHub Stats" />
+<img src="https://streak-stats.demolab.com?user=Amogha-Mayya&theme=tokyonight&hide_border=true" alt="GitHub Streak Stats" />  
+</div>
+
+  <!-- Second row: streak stats -->
+  <div style="margin-top: 30px; text-align: center;">
+    <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amogha-Mayya&theme=tokyonight&show_icons=true&hide_border=true&layout=compact" alt="Top Languages" />
+  </div>
+
 </section>
 
-<br>
-<img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Amogha-Mayya&theme=tokyonight&hide_border=false&include_all_commits=false&count_private=false&layout=compact" alt="Github Streak" title="Github Streak"/> 
-<table>
-<tr>
-  <td>
-    <img src="https://github-readme-stats.vercel.app/api?username=Amogha-Mayya&show_icons=true&theme=tokyonight&hide_border=true&include_all_commits=false&count_private=false" alt="GitHub Stats" title="Github Stats"/>  
-
-  </td>
-  <td>
-      <img src="https://github-readme-streak-stats.herokuapp.com/?user=Amogha-Mayya&theme=tokyonight&hide_border=true" alt="Github Streak" title="Github Streak"/> 
-  </td>
-</tr>
-
-</table>
-</section>
 
 ---
 [![](https://visitcount.itsvg.in/api?id=Amogha-Mayya&icon=0&color=0)](https://visitcount.itsvg.in)
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->

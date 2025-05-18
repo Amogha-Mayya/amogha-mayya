@@ -550,6 +550,43 @@ article .icon {
 }
 
 /* Added responsive adjustments */
+
+@media screen and (max-width: 1400px) {
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 0 1rem;
+    }
+
+    .about-card {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.05));
+      backdrop-filter: blur(10px);
+      border-radius: 20px;
+      padding: 2.5rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      margin-bottom: 3rem;
+      transform: translateY(0);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .about-card:hover {
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .about-text {
+      font-family: 'Poppins', sans-serif;
+      font-size: 1.1rem;
+      line-height: 1.8;
+      color: #e0e0e0;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+
 @media screen and (max-width: 1200px) {
   .section-spacing {
     margin-top: 3rem;
@@ -575,6 +612,10 @@ article .icon {
     }
     .project-link {
       padding-right:10px;
+}
+.github-icon {
+            margin-left: 100px;
+        }
 }
 a.no-hover:hover {
   color: inherit;
@@ -649,8 +690,6 @@ body {
     transform: scale(0.8);
   }
 }
-
-
 
 
 

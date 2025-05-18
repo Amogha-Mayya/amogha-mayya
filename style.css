@@ -616,7 +616,26 @@ article .icon {
 .github-icon {
             margin-left: 100px;
         }
+
+
+#experience {
+  margin-left:50px;
+  margin-left: 50px;
 }
+#about {
+  margin-left:50px;
+  margin-left: 50px;
+}
+#profile {
+  margin-left:40px;
+  margin-left: 40px;
+}
+
+}
+
+
+
+
 a.no-hover:hover {
   color: inherit;
   text-decoration: none;

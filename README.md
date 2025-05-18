@@ -54,6 +54,3 @@
 </section>
 
 
----
-[![](https://visitcount.itsvg.in/api?id=Amogha-Mayya&icon=0&color=0)](https://visitcount.itsvg.in)
-

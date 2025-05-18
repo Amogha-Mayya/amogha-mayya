@@ -47,3 +47,35 @@ function toggleMenu() {
     menu.classList.toggle("open");
     icon.classList.toggle("open");
 }
+
+
+ document.addEventListener('DOMContentLoaded', function() {
+    // Create stars container
+    const starsContainer = document.createElement('div');
+    starsContainer.className = 'stars';
+    document.body.appendChild(starsContainer);
+    
+    // Create stars
+    const numberOfStars = 200;
+    
+    for (let i = 0; i < numberOfStars; i++) {
+      const star = document.createElement('div');
+      star.className = 'star';
+      
+      // Random size between 1px and 3px
+      const size = Math.random() * 2 + 1.4;
+      star.style.width = `${size}px`;
+      star.style.height = `${size}px`;
+      
+      // Random position
+      star.style.left = `${Math.random() * 100}%`;
+      star.style.top = `${Math.random() * 100}%`;
+      
+      // Random animation properties
+      star.style.setProperty('--duration', `${Math.random() * 3 + 2}s`);
+      star.style.setProperty('--delay', `${Math.random() * 5}s`);
+      star.style.setProperty('--opacity', `${Math.random() * 0.7 + 0.3}`);
+      
+      starsContainer.appendChild(star);
+    }
+  });

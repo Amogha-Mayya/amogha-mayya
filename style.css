@@ -600,7 +600,7 @@ article .icon {
   }
   .about-text {
       font-family: 'Poppins', sans-serif;
-      font-size: 0.8rem;
+      font-size: 0.9rem;
       line-height: 1.8;
       color: #e0e0e0;
       margin-bottom: 1.5rem;
@@ -683,7 +683,6 @@ body {
   width: 100%;
   height: 100%;
   pointer-events: none;
-  z-index: 10; 
 }
 
 .star {
@@ -712,9 +711,30 @@ body {
 
 
 
+/* Continuous floating animation for project cards */
+/* .project-card {
+  position: relative;
+  animation: float 3s ease-in-out infinite;
+}
 
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 
-
-
-
-
+.project-card:nth-child(1) { animation: float 3s ease-in-out infinite; }
+.project-card:nth-child(2) { animation: float 3.5s ease-in-out infinite;
+      animation-delay: 0.5s; }
+.project-card:nth-child(3) { animation: float 3s ease-in-out infinite; }
+.project-card:nth-child(4) { animation: float 3.5s ease-in-out infinite;
+      animation-delay: 0.5s; }
+.project-card:nth-child(5) { animation: float 3s ease-in-out infinite; }
+.project-card:nth-child(6) { animation: float 3.5s ease-in-out infinite;
+      animation-delay: 0.5s; } */

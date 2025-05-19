@@ -56,14 +56,14 @@ function toggleMenu() {
     document.body.appendChild(starsContainer);
     
     // Create stars
-    const numberOfStars = 200;
+    const numberOfStars = 175;
     
     for (let i = 0; i < numberOfStars; i++) {
       const star = document.createElement('div');
       star.className = 'star';
       
       // Random size between 1px and 3px
-      const size = Math.random() * 2 + 1.4;
+      const size = Math.random() * 2 + 1.3;
       star.style.width = `${size}px`;
       star.style.height = `${size}px`;
       

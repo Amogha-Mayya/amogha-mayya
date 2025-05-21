@@ -600,7 +600,7 @@ article .icon {
   }
   .about-text {
       font-family: 'Poppins', sans-serif;
-      font-size: 0.9rem;
+      font-size: 1rem;
       line-height: 1.8;
       color: #e0e0e0;
       margin-bottom: 1.5rem;
@@ -611,7 +611,7 @@ article .icon {
       margin-bottom: 3rem;
     }
     .project-link {
-      padding-right:10px;
+      padding-right:15px;
 }
 .github-icon {
             margin-left: 100px;

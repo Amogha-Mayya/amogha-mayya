@@ -738,3 +738,137 @@ body {
 .project-card:nth-child(5) { animation: float 3s ease-in-out infinite; }
 .project-card:nth-child(6) { animation: float 3.5s ease-in-out infinite;
       animation-delay: 0.5s; } */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* #astronaut > img {
+  animation: anim 15s linear infinite;
+  align-items: right;
+  margin-left: 1000px;;
+} */
+
+#astronaut {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            padding: 0 175px;
+        }
+        
+#astronaut > img:nth-child(1) {
+  animation: anim2 25s linear infinite;
+  width: 275px;
+}
+#astronaut > img:nth-child(2) {
+  animation: anim 25s linear infinite;
+  width: 230px;
+}
+
+/* #astronaut > img:nth-child(2) {
+  animation: earth 120s linear infinite;
+  width: 180px;
+} */
+
+#astronaut > img:nth-child(1):hover {
+  animation: earth 2s linear;
+}
+
+#astronaut > img:nth-child(2):hover {
+  animation: earth 2s linear;
+}
+@keyframes anim {
+  0% {
+    transform: translateY(0px);
+  }
+  10%{
+    transform: translateY(30px) rotate(10deg);
+  }
+  20%{
+  }
+   30%{
+  }
+   40%{
+    transform: rotate(20deg);
+  }
+  50% {
+    transform: rotate(30deg);
+  }
+  60%{
+    transform: rotate(40deg);
+  }
+  70%{
+  }
+  80%{
+  }
+  90%{
+    transform: translateY(30px) rotate(10deg);
+  }
+   100% {
+    transform: translateY(0px);
+  }
+}
+
+ @keyframes earth {
+            0% {
+                transform: rotate(0deg);
+            }
+            25% {
+                transform: rotate(90deg);
+            }
+            50% {
+                transform: rotate(180deg);
+            }
+            75% {
+                transform: rotate(270deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+}
+
+
+@keyframes anim2 {
+  0% {
+    transform: translateY(0px);
+  }
+  10%{
+    transform: translateY(-30px) rotate(-10deg);
+  }
+  20%{
+    transform: translateY(-50px) rotate(-20deg);
+  }
+   30%{
+    transform: translateY(-70px) rotate(-10deg);
+  }
+   40%{
+    transform: translateY(-90px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-90px) rotate(-10deg);
+  }
+  60%{
+    transform: translateY(-90px) rotate(0deg);
+  }
+  70%{
+    transform: translateY(-70px) rotate(20deg);
+  }
+  80%{
+    transform: translateY(-50px) rotate(10deg);
+  }
+  90%{
+    transform: translateY(-30px) rotate(0deg);
+  }
+   100% {
+    transform: translateY(0px);
+  }
+}

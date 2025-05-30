@@ -768,10 +768,13 @@ body {
 #astronaut > img:nth-child(1) {
   animation: anim2 25s linear infinite;
   width: 275px;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.283), transparent 75%);
 }
 #astronaut > img:nth-child(2) {
   animation: anim 25s linear infinite;
   width: 230px;
+  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.285), transparent 75%);
+
 }
 
 /* #astronaut > img:nth-child(2) {
@@ -779,13 +782,13 @@ body {
   width: 180px;
 } */
 
-#astronaut > img:nth-child(1):hover {
+/* #astronaut > img:nth-child(1):hover {
   animation: earth 2s linear;
 }
 
 #astronaut > img:nth-child(2):hover {
   animation: earth 2s linear;
-}
+} */
 @keyframes anim {
   0% {
     transform: translateY(0px);

@@ -43,9 +43,7 @@
 
 
 <h3 align="center">Git Stats</h3>
-
 <div align="center">
- 
   <img src="https://streak-stats.demolab.com/?user=amogha-mayya&theme=highcontrast&hide_border=true" alt="GitHub Streak" />
   <br>
 <br>

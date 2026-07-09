@@ -633,7 +633,16 @@ article .icon {
 
 }
 
-
+.github-icon {
+  width: 22px;
+  height: 22px;
+  fill: currentColor;
+}
+/* override for the live link icon which uses stroke */
+.project-link:last-child .github-icon {
+  fill: none;
+  stroke: currentColor;
+}
 
 
 a.no-hover:hover {

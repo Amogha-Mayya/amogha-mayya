@@ -97,13 +97,11 @@ main, .site-footer { position: relative; z-index: 1; }
 
 /* ───────── Hero ───────── */
 .hero {
-  min-height: 100vh;
-  min-height: 100svh;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: clamp(3rem, 9vw, 8rem);
-  padding: 6.5rem 1.5rem 3rem;
+  padding: 6.5rem 1.5rem 1rem;
 }
 
 .stage {
@@ -219,6 +217,7 @@ main, .site-footer { position: relative; z-index: 1; }
   margin: 0 auto;
   padding: 4.5rem 0;
 }
+#about { padding-top: 2.5rem; }
 .section-narrow { width: min(900px, 100% - 2.5rem); }
 
 .title {
@@ -424,17 +423,21 @@ main, .site-footer { position: relative; z-index: 1; }
   width: min(1100px, 100% - 2.5rem);
   margin: 0 auto 1.5rem;
 }
-#astronaut > img:first-child {
-  width: clamp(120px, 22vw, 275px);
-  height: auto;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.28), transparent 70%);
-  animation: anim2 25s linear infinite;
-}
-#astronaut > img:last-child {
-  width: clamp(100px, 18vw, 230px);
-  height: auto;
-  background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.28), transparent 70%);
-  animation: anim 25s linear infinite;
+.astro { display: block; cursor: pointer; }
+.astro img { height: auto; background: radial-gradient(ellipse at center, rgba(255, 255, 255, 0.28), transparent 70%); }
+.astro-left img { width: clamp(120px, 22vw, 275px); animation: anim2 25s linear infinite; }
+.astro-right img { width: clamp(100px, 18vw, 230px); animation: anim 25s linear infinite; }
+/* they drift in from the edges when the footer comes into view */
+.js .astro { opacity: 0; transition: transform 2.2s var(--ease), opacity 1.2s ease; }
+.js .astro-left { transform: translateX(-55vw) rotate(-140deg); }
+.js .astro-right { transform: translateX(55vw) rotate(140deg); }
+.js .astro.in { opacity: 1; transform: none; }
+/* click or tap an astronaut for a somersault */
+.astro.flip { animation: flip 1.4s var(--ease); }
+@keyframes flip {
+  0% { transform: rotate(0) scale(1); }
+  50% { transform: rotate(200deg) scale(1.18) translateY(-30px); }
+  100% { transform: rotate(360deg) scale(1); }
 }
 .made-with { font-size: 1rem; }
 
@@ -458,9 +461,64 @@ main, .site-footer { position: relative; z-index: 1; }
   90% { transform: translateY(-30px) rotate(0deg); }
 }
 
+/* ───────── Rocket: back to top ───────── */
+.rocket {
+  position: fixed;
+  right: 18px;
+  bottom: 18px;
+  z-index: 40;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: rgba(20, 20, 20, 0.7);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  font-size: 1.35rem;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: opacity 0.4s, visibility 0.4s, transform 0.4s var(--ease), border-color 0.3s;
+}
+.rocket span { display: block; transform: rotate(-45deg); }
+.rocket.show { opacity: 1; visibility: visible; transform: none; }
+.rocket.show:hover { transform: translateY(-4px); border-color: rgba(255, 255, 255, 0.5); }
+/* flame, only while launching */
+.rocket::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 82%;
+  width: 8px;
+  height: 0;
+  margin-left: -4px;
+  border-radius: 0 0 6px 6px;
+  background: linear-gradient(#fff3c4, #ffb347 30%, #ff5733 60%, transparent);
+  transition: height 0.25s;
+}
+.rocket.launch {
+  visibility: visible;
+  border-color: transparent;
+  background: transparent;
+  -webkit-backdrop-filter: none;
+  backdrop-filter: none;
+  animation: launch 1.5s cubic-bezier(0.6, 0, 0.9, 0.5) forwards;
+}
+.rocket.launch::after { height: 70px; }
+@keyframes launch {
+  0% { transform: translate(0, 0); opacity: 1; }
+  6% { transform: translate(-2px, 2px); }
+  12% { transform: translate(2px, 1px); }
+  18% { transform: translate(-2px, 2px); }
+  24% { transform: translate(1px, 0); }
+  92% { opacity: 1; }
+  100% { transform: translate(0, -115vh); opacity: 0; }
+}
+
 /* ───────── Responsive ───────── */
 @media (max-width: 1000px) {
-  .hero { flex-direction: column; gap: 0.5rem; padding-top: 5.5rem; }
+  .hero { flex-direction: column; gap: 0.5rem; padding-top: 5rem; }
   .stage { --size: 220px; --ring-in: 34px; --ring-out: 64px; }
   .projects-grid { grid-template-columns: repeat(2, 1fr); }
 }

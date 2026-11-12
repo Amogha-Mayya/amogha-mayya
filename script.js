@@ -31,7 +31,7 @@
           clearInterval(msgTimer);
           finishIntro();
         }
-      }, 520);
+      }, 900);
       preloader.addEventListener('click', function () {
         clearInterval(msgTimer);
         finishIntro();
@@ -86,6 +86,51 @@
       var r = card.getBoundingClientRect();
       card.style.setProperty('--mx', (e.clientX - r.left) + 'px');
       card.style.setProperty('--my', (e.clientY - r.top) + 'px');
+    });
+  }
+
+  /* ═════════ Rocket: launches upward and takes the page back to the top ═════════ */
+  var rocket = document.getElementById('rocket');
+  if (rocket) {
+    window.addEventListener('scroll', function () {
+      if (!rocket.classList.contains('launch')) {
+        rocket.classList.toggle('show', window.scrollY > 600);
+      }
+    }, { passive: true });
+    rocket.addEventListener('click', function () {
+      if (rocket.classList.contains('launch')) return;
+      rocket.classList.add('launch');
+      setTimeout(function () {
+        window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      }, 350);
+      setTimeout(function () { rocket.classList.remove('launch', 'show'); }, 1600);
+    });
+  }
+
+  /* ═════════ Astronauts: drift in, and somersault when clicked ═════════ */
+  var astros = document.querySelectorAll('.astro');
+  if (astros.length) {
+    if ('IntersectionObserver' in window) {
+      var astroObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          astros.forEach(function (a) { a.classList.add('in'); });
+          astroObserver.disconnect();
+        });
+      }, { threshold: 0.3 });
+      astroObserver.observe(document.getElementById('astronaut'));
+    } else {
+      astros.forEach(function (a) { a.classList.add('in'); });
+    }
+    astros.forEach(function (a) {
+      a.addEventListener('click', function () {
+        a.classList.remove('flip');
+        void a.offsetWidth;                                // restart the animation
+        a.classList.add('flip');
+      });
+      a.addEventListener('animationend', function (e) {
+        if (e.animationName === 'flip') a.classList.remove('flip');
+      });
     });
   }
 

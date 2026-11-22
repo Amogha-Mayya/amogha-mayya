@@ -107,33 +107,6 @@
     });
   }
 
-  /* ═════════ Astronauts: drift in, and somersault when clicked ═════════ */
-  var astros = document.querySelectorAll('.astro');
-  if (astros.length) {
-    if ('IntersectionObserver' in window) {
-      var astroObserver = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-          if (!entry.isIntersecting) return;
-          astros.forEach(function (a) { a.classList.add('in'); });
-          astroObserver.disconnect();
-        });
-      }, { threshold: 0.3 });
-      astroObserver.observe(document.getElementById('astronaut'));
-    } else {
-      astros.forEach(function (a) { a.classList.add('in'); });
-    }
-    astros.forEach(function (a) {
-      a.addEventListener('click', function () {
-        a.classList.remove('flip');
-        void a.offsetWidth;                                // restart the animation
-        a.classList.add('flip');
-      });
-      a.addEventListener('animationend', function (e) {
-        if (e.animationName === 'flip') a.classList.remove('flip');
-      });
-    });
-  }
-
   /* ═════════ Starfield: drifting stars + shooting stars on one canvas ═════════ */
   var starCanvas = document.getElementById('stars');
   var sctx = starCanvas.getContext('2d');

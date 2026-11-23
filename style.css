@@ -400,7 +400,7 @@ main, .site-footer { position: relative; z-index: 1; }
 }
 .pub-card + .pub-card { margin-top: 1.4rem; }
 .pub-progress { color: #ffb38f; background: rgba(255, 87, 51, 0.12); }
-.pub-card:last-child .pub-title:last-child { margin-bottom: 0; }
+.pub-progress + .pub-title { margin-bottom: 1.2rem; }
 .pub-title { font-size: 1.1rem; font-weight: 600; line-height: 1.5; margin-bottom: 0.6rem; }
 .pub-meta { font-size: 0.85rem; color: var(--dim); margin-bottom: 1.2rem; }
 .pub-link {
